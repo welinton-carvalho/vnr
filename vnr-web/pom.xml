@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>br.com.vnr</groupId>
+		<artifactId>vnr</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>vnr-web</artifactId>
+	<packaging>war</packaging>
+
+	<name>vnr-web</name>
+	<description>Camada de interface da aplicação VNR.</description>
+
+	<developers>
+		<developer>
+			<name>Welinton Carvalho de Padua</name>
+			<email>welinton_carvalho@outlook.com</email>
+			<roles>
+				<role>Desenvolvedor</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<properties>
+		<version.vnr-domain>0.0.1-SNAPSHOT</version.vnr-domain>
+		<version.maven.war.plugin>2.4</version.maven.war.plugin>
+		<version.javax.el>2.2</version.javax.el>
+		<version.jstl>1.2</version.jstl>
+		<version.javax.servlet.api>3.0.1</version.javax.servlet.api>
+		<version.spring.web>3.0.5.RELEASE</version.spring.web>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.maven.compiler}</version>
+				<configuration>
+					<source>${version.java}</source>
+					<target>${version.java}</target>
+					<encoding>${project.source.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${version.maven.war.plugin}</version>
+				<configuration>
+					<warSourceDirectory>src/main/webapp</warSourceDirectory>
+					<failOnMissingWebXml>true</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>br.com.vnr</groupId>
+			<artifactId>vnr-domain</artifactId>
+			<version>${version.vnr-domain}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>${version.javax.el}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${version.jstl}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${version.javax.servlet.api}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${version.spring.web}</version>
+		</dependency>
+	</dependencies>
+
+</project>

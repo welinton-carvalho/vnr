@@ -1,0 +1,178 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.com.vnr</groupId>
+	<artifactId>vnr</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>vnr</name>
+	<description>Sistema de Computação de Pontos para Restaurantes</description>
+
+	<developers>
+		<developer>
+			<name>Welinton Carvalho de Padua</name>
+			<email>welinton_carvalho@outlook.com</email>
+			<roles>
+				<role>Desenvolvedor</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<modules>
+		<module>vnr-domain</module>
+		<module>vnr-web</module>
+	</modules>
+
+	<properties>
+
+		<project.source.encoding>UTF-8</project.source.encoding>
+		<version.java>1.7</version.java>
+
+		<version.gson>2.3.1</version.gson>
+		<version.slf4j>1.6.1</version.slf4j>
+		<version.hsqldb>2.3.3</version.hsqldb>
+
+		<version.spring>4.1.7.RELEASE</version.spring>
+		<version.spring.data.jpa>1.8.1.RELEASE</version.spring.data.jpa>
+		<version.maven.compiler>3.1</version.maven.compiler>
+		<version.maven.source.plugin>2.2.1</version.maven.source.plugin>
+
+		<version.vnr-domain>0.0.1-SNAPSHOT</version.vnr-domain>
+		<version.vnr-web>0.0.1-SNAPSHOT</version.vnr-web>
+
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>repository.jboss.org-public</id>
+			<name>JBoss repository</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>repository.jboss.org</id>
+			<name>JBoss Repository</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+		</repository>
+		<repository>
+			<id>org.springframework.maven.milestone</id>
+			<name>Spring Maven Milestone Repository</name>
+			<url>http://maven.springframework.org/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>pentaho-releases</id>
+			<url>http://repository.pentaho.org/artifactory/repo/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${version.slf4j}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${version.hsqldb}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${version.spring.data.jpa}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.hibernate.javax.persistence</groupId>
+					<artifactId>hibernate-jpa-2.0-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework</groupId> -->
+		<!-- <artifactId>spring-web</artifactId> -->
+		<!-- <version>${version.spring}</version> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework</groupId> -->
+		<!-- <artifactId>spring-webmvc</artifactId> -->
+		<!-- <version>${version.spring}</version> -->
+		<!-- <scope>runtime</scope> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${version.spring}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${version.gson}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.maven.compiler}</version>
+				<configuration>
+					<source>${version.java}</source>
+					<target>${version.java}</target>
+					<encoding>${project.source.encoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>aws</id>
+			<build>
+				<finalName>teste</finalName>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

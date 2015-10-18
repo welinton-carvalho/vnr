@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>br.com.vnr</groupId>
+		<artifactId>vnr</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>vnr-domain</artifactId>
+	<packaging>jar</packaging>
+
+	<name>vnr-domain</name>
+	<description>Camada de domínio da aplicação VNR.</description>
+
+	<developers>
+		<developer>
+			<name>Welinton Carvalho de Padua</name>
+			<email>welinton_carvalho@outlook.com</email>
+			<roles>
+				<role>Desenvolvedor</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<properties>
+		<version.hibernate>4.2.10.Final</version.hibernate>
+		<version.hibernate.jpa>1.0.1.Final</version.hibernate.jpa>
+		<version.hibernate.validator>4.2.0.Final</version.hibernate.validator>
+		<version.junit>4.11</version.junit>
+		<version.jacoco>0.7.5.201505241946</version.jacoco>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${version.jacoco}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${version.maven.source.plugin}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.maven.compiler}</version>
+				<configuration>
+					<source>${version.java}</source>
+					<target>${version.java}</target>
+					<encoding>${project.source.encoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${version.hibernate}</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>antlr</artifactId>
+					<groupId>antlr</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-envers</artifactId>
+			<version>${version.hibernate}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>${version.hibernate.jpa}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${version.hibernate.validator}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${version.junit}</version>
+		</dependency>
+	</dependencies>
+
+</project>

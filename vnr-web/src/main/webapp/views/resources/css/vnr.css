@@ -1,0 +1,17 @@
+.ranking {
+	text-align: center;
+}
+
+.ranking li {
+	margin-bottom: 3px;
+}
+
+.ranking img {
+	box-shadow: 0px 0px 2px #ccc;
+	opacity: .3;
+	width: 70px;
+}
+
+.ranking img.vencedor, .ranking .geral img {
+	opacity: 1;
+}
