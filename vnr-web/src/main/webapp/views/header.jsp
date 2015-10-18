@@ -37,5 +37,5 @@
 		
 	</script>
 	
-	<body style="background: rgb(79, 70, 136) none repeat scroll 0% 0%;">
+	<body>
 		<%@ include file="menu.jsp"%>

@@ -3,6 +3,7 @@ package br.com.vnr.service;
 import br.com.vnr.entity.Restaurant;
 import br.com.vnr.entity.Vote;
 import br.com.vnr.exceptions.ServiceException;
+import br.com.vnr.repository.VoteRepository;
 
 public interface VoteService extends AbstractBaseMappedService<Long, Vote> {
 
@@ -10,5 +11,9 @@ public interface VoteService extends AbstractBaseMappedService<Long, Vote> {
 
 	long getQttOfVoteByRestaurant(Restaurant restaurant)
 			throws ServiceException;
+
+	void setVoteRepository(VoteRepository voteRepository);
+
+	void setRestaurantService(RestaurantService restaurantService);
 	
 }

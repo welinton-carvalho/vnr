@@ -52,9 +52,9 @@ public class VoteServiceImpl extends AbstractBaseMappedServiceImpl<Long, Vote>
 
 			return this.save(vote);
 
-		} catch (Exception e) {
+		} catch (ServiceException exception) {
 
-			throw new ServiceException("Erro ao computar o voto.");
+			throw new ServiceException("Erro ao computar o voto.", exception);
 
 		}
 
@@ -83,8 +83,19 @@ public class VoteServiceImpl extends AbstractBaseMappedServiceImpl<Long, Vote>
 					"Erro ao computar a quantidade de votos para o restaurante.");
 
 		}
-		
+
 		return qtt;
-		
+
 	}
+
+	@Override
+	public void setVoteRepository(VoteRepository voteRepository) {
+		this.voteRepository = voteRepository;
+	}
+
+	@Override
+	public void setRestaurantService(RestaurantService restaurantService) {
+		this.restaurantService = restaurantService;
+	}
+
 }

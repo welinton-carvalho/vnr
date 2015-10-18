@@ -44,4 +44,9 @@ public class VoterServiceImpl extends
 
 	}
 
+	@Override
+	public void setVoterRepository(VoterRepository voterRepository) {
+		this.voterRepository = voterRepository;
+	}
+
 }

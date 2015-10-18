@@ -27,8 +27,10 @@
 		<version.hibernate>4.2.10.Final</version.hibernate>
 		<version.hibernate.jpa>1.0.1.Final</version.hibernate.jpa>
 		<version.hibernate.validator>4.2.0.Final</version.hibernate.validator>
+		<version.antlr>2.7.7</version.antlr>
 		<version.junit>4.11</version.junit>
 		<version.jacoco>0.7.5.201505241946</version.jacoco>
+		<version.easymock>3.4</version.easymock>
 	</properties>
 
 	<build>
@@ -78,7 +80,6 @@
 	</build>
 
 	<dependencies>
-	
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -108,11 +109,21 @@
 			<version>${version.hibernate.validator}</version>
 			<scope>compile</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>antlr</groupId>
+			<artifactId>antlr</artifactId>
+			<version>${version.antlr}</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${version.junit}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>${version.easymock}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
