@@ -13,6 +13,7 @@ import br.com.vnr.controller.constants.PagesToNavigate;
 import br.com.vnr.controller.request.mapper.VoterRequestMapper;
 import br.com.vnr.dto.RankingDTO;
 import br.com.vnr.entity.Restaurant;
+import br.com.vnr.entity.Vote;
 import br.com.vnr.entity.Voter;
 import br.com.vnr.exceptions.ServiceException;
 import br.com.vnr.service.impl.RankingServiceImpl;
@@ -198,12 +199,16 @@ public class HomeController extends AbstractBaseController {
 			Restaurant firstRestaurant = new Restaurant();
 			firstRestaurant.setId(idRestaurantFirstVote);
 
-			this.voteService.doVote(firstRestaurant);
+			Vote firstVote = this.voteService.doVote(firstRestaurant);
+
+			request.getSession().setAttribute("firstVote", firstVote);
 
 			Restaurant secondRestaurant = new Restaurant();
 			secondRestaurant.setId(idRestaurantSecondVote);
 
-			this.voteService.doVote(secondRestaurant);
+			Vote secondVote = this.voteService.doVote(secondRestaurant);
+
+			request.getSession().setAttribute("secondVote", secondVote);
 
 			this.saveCokie(request, response);
 
@@ -216,43 +221,16 @@ public class HomeController extends AbstractBaseController {
 
 	}
 
-	private void saveCokie(HttpServletRequest request, HttpServletResponse response) {
-
-		Cookie haveVoted = new Cookie("haveVoted", "yes");
-		haveVoted.setMaxAge(99999999);
-		haveVoted.setComment("Marcacao de voto VNR WEB");
-
-		response.addCookie(haveVoted);
-
-	}
-
-	private boolean verifyVotedCokie(HttpServletRequest request, HttpServletResponse response) {
-
-		boolean exists = false;
-
-		Cookie[] cookies = request.getCookies();
-		if (cookies != null) {
-
-			for (Cookie cookie : cookies) {
-
-				if (cookie.getName().equalsIgnoreCase("haveVoted")) {
-					exists = true;
-				}
-
-			}
-
-		}
-
-		return exists;
-
-	}
-
 	private void doSaveVoter(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		try {
 
 			Voter voter = new VoterRequestMapper().getVoter(request);
+						
+			voter.addVote((Vote) this.getSessionAttribute(request, "firstVote"));
+			
+			voter.addVote((Vote) this.getSessionAttribute(request, "secondVote"));
 
 			this.voterService.save(voter);
 
@@ -286,9 +264,40 @@ public class HomeController extends AbstractBaseController {
 		} catch (Exception exception) {
 
 			throw new ServiceException(
-					"Ocorreu um erro ao montar a lista de restaurantes para votação." , exception);
+					"Ocorreu um erro ao montar a lista de restaurantes para votação.", exception);
 
 		}
+
+	}
+
+	private void saveCokie(HttpServletRequest request, HttpServletResponse response) {
+
+		Cookie haveVoted = new Cookie("haveVoted", "yes");
+		haveVoted.setMaxAge(99999999);
+		haveVoted.setComment("Marcacao de voto VNR WEB");
+
+		response.addCookie(haveVoted);
+
+	}
+
+	private boolean verifyVotedCokie(HttpServletRequest request, HttpServletResponse response) {
+
+		boolean exists = false;
+
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null) {
+
+			for (Cookie cookie : cookies) {
+
+				if (cookie.getName().equalsIgnoreCase("haveVoted")) {
+					exists = true;
+				}
+
+			}
+
+		}
+
+		return exists;
 
 	}
 

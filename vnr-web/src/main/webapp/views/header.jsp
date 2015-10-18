@@ -24,11 +24,14 @@
 			form.executeAction.value = null;
 			form.submit();
 		}
-		function showRanking() {
-			var form = document.getElementById('formPrincipal');
-			form.executeAction.value = "showRanking";
-			form.submit();
-		}
+
+		//      TODO: Desabilitado para forcar o usuario a cadastrar seus dados para ver o ranking. 
+		// 		function showRanking() {
+		// 			var form = document.getElementById('formPrincipal');
+		// 			form.executeAction.value = "showRanking";
+		// 			form.submit();
+		// 		}
+		
 	</script>
 	
 	<body>

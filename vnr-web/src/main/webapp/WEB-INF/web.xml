@@ -63,7 +63,7 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>/views/voting/voting.jsp</welcome-file>
+		<welcome-file>home</welcome-file>
 	</welcome-file-list>
 
 </web-app>

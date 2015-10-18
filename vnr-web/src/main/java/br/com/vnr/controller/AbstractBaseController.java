@@ -92,4 +92,26 @@ public abstract class AbstractBaseController extends HttpServlet {
 		return result;
 
 	}
+	
+	public Object getSessionAttribute(HttpServletRequest request, String attributeName)
+			throws ServletException {
+
+		Object result = null;
+
+		if (attributeName != null | !attributeName.isEmpty()) {
+
+			result = request.getSession().getAttribute(attributeName);
+
+			if (result == null) {
+				throw new ServletException("O atributo informado não existe: " + attributeName);
+			}
+
+			return result;
+
+		}
+
+		return result;
+
+	}
+	
 }
