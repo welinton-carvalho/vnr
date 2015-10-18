@@ -123,20 +123,6 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${version.spring}</version>
 		</dependency>
-
-
-		<!-- <dependency> -->
-		<!-- <groupId>org.springframework</groupId> -->
-		<!-- <artifactId>spring-web</artifactId> -->
-		<!-- <version>${version.spring}</version> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.springframework</groupId> -->
-		<!-- <artifactId>spring-webmvc</artifactId> -->
-		<!-- <version>${version.spring}</version> -->
-		<!-- <scope>runtime</scope> -->
-		<!-- </dependency> -->
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -182,7 +168,7 @@
 				<jboss.autodeploy.skipRun>false</jboss.autodeploy.skipRun>
 				<!-- AUTO DEPLOY JBOSS -->
 				<jboss.as.hostname>localhost</jboss.as.hostname>
-				<jboss.as.port>9999</jboss.as.port>
+				<jboss.as.port>9990</jboss.as.port>
 				<jboss.as.name>pst-web.war</jboss.as.name>
 				<jboss.as.username>pst</jboss.as.username>
 				<jboss.as.password>741qaz</jboss.as.password>
