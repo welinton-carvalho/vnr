@@ -31,6 +31,15 @@
 		<version.javax.servlet.api>3.0.1</version.javax.servlet.api>
 		<version.spring.web>3.0.5.RELEASE</version.spring.web>
 		<version.jboss.as>7.4.Final</version.jboss.as>
+
+		<!-- AUTO DEPLOY JBOSS -->
+		<jboss.as.hostname>localhost</jboss.as.hostname>
+		<jboss.as.port>19999</jboss.as.port>
+		<jboss.as.name>pst-web.war</jboss.as.name>
+		<jboss.as.username>pst</jboss.as.username>
+		<jboss.as.password>741qaz</jboss.as.password>
+		<!-- AUTO DEPLOY JBOSS -->
+
 	</properties>
 
 	<build>
