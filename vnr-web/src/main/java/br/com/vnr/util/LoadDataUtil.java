@@ -26,11 +26,11 @@ public class LoadDataUtil {
 		try {
 
 			List<Restaurant> restaurants = new ArrayList<Restaurant>();
-			restaurants.add(new Restaurant(1L, "Deltaco", "deltaco.jpg"));
+			restaurants.add(new Restaurant(1L, "Bobs", "bobs.jpg"));
 			restaurants.add(new Restaurant(2L, "Subway", "subway.jpg"));
-			restaurants.add(new Restaurant(3L, "El Pollo Loco", "el-pollo-loco.jpg"));
-			restaurants.add(new Restaurant(4L, "IN-N-OUT Burger", "in-n-out-burger.jpg"));
-			restaurants.add(new Restaurant(5L, "Popeyes", "popeyes.jpg"));
+			restaurants.add(new Restaurant(3L, "Burger King", "burger-king.jpg"));
+			restaurants.add(new Restaurant(4L, "McDonald's", "mcdonalds.jpg"));
+			restaurants.add(new Restaurant(5L, "Giraffas", "giraffas.jpg"));
 
 			for (Restaurant restaurant : restaurants) {
 				this.restaurantService.save(restaurant);
