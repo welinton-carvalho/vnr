@@ -4,7 +4,7 @@
 <%@ include file="../header.jsp"%>
 
 <div class="container ranking">
- 	<form id="formPrincipal" method="POST" action="/vnr-web/HomeController">
+ 	<form id="formPrincipal" method="POST" action="/vote-no-restaurante/HomeController">
   		<input type="hidden" name="executeAction" value="" />
 		<div class="row geral">
 			<h3>Ranking de Preferência</h3>

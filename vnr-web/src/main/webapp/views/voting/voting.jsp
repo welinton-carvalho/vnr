@@ -41,7 +41,7 @@
 
 <div class="container">
 	<div class="col-md-12">
-		<form id="formPrincipal" method="POST" action="/vnr-web/HomeController">
+		<form id="formPrincipal" method="POST" action="/vote-no-restaurante/HomeController">
 			
 			<input type="hidden" name="executeAction" value="" />
 			<input type="hidden" name="idRestaurantFirstVote" value="" />
