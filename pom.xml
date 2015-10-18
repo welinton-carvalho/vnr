@@ -168,10 +168,26 @@
 
 	<profiles>
 		<profile>
+			<id>dev</id>
+			<properties>
+				<jboss.autodeploy.skipRun>true</jboss.autodeploy.skipRun>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
 			<id>aws</id>
-			<build>
-				<finalName>teste</finalName>
-			</build>
+			<properties>
+				<jboss.autodeploy.skipRun>false</jboss.autodeploy.skipRun>
+				<!-- AUTO DEPLOY JBOSS -->
+				<jboss.as.hostname>localhost</jboss.as.hostname>
+				<jboss.as.port>9999</jboss.as.port>
+				<jboss.as.name>pst-web.war</jboss.as.name>
+				<jboss.as.username>pst</jboss.as.username>
+				<jboss.as.password>741qaz</jboss.as.password>
+				<!-- AUTO DEPLOY JBOSS -->
+			</properties>
 		</profile>
 	</profiles>
 

@@ -30,6 +30,7 @@
 		<version.jstl>1.2</version.jstl>
 		<version.javax.servlet.api>3.0.1</version.javax.servlet.api>
 		<version.spring.web>3.0.5.RELEASE</version.spring.web>
+		<version.jboss.as>7.4.Final</version.jboss.as>
 	</properties>
 
 	<build>
@@ -50,6 +51,29 @@
 					<warSourceDirectory>src/main/webapp</warSourceDirectory>
 					<failOnMissingWebXml>true</failOnMissingWebXml>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<version>${version.jboss.as}</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						<configuration>
+							<skip>${jboss.autodeploy.skipRun}</skip>
+							<configuration>
+								<hostname>${jboss.as.hostname}</hostname>
+								<port>${jboss.as.port}</port>
+								<name>${jboss.as.name}</name>
+								<username>${jboss.as.username}</username>
+								<password>${jboss.as.password}</password>
+							</configuration>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 
