@@ -286,7 +286,7 @@ public class HomeController extends AbstractBaseController {
 		} catch (Exception exception) {
 
 			throw new ServiceException(
-					"Ocorreu um erro ao montar a lista de restaurantes para votação.", exception);
+					"Ocorreu um erro ao montar a lista de restaurantes para votação." , exception);
 
 		}
 

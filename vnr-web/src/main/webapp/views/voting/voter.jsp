@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <p>Obrigado por votar! Antes de computar seus votos, por favor informe seus dados.</p>
-            <form id="formPrincipal" method="POST" action="/vote-no-restaurante/HomeController">
+            <form id="formPrincipal" method="POST" action="/vote-no-restaurante/home">
           		<input type="hidden" name="executeAction" value="" />
                 <div class="form-group">
                     <label for="nome">Nome</label>

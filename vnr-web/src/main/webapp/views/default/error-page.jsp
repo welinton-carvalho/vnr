@@ -3,7 +3,7 @@
 <%@ include file="../header.jsp"%>
 
 <div class="container">
-	<form id="formPrincipal" method="POST" action="/vote-no-restaurante/HomeController">
+	<form id="formPrincipal" method="POST" action="/vote-no-restaurante/home">
 		<input type="hidden" name="executeAction" value="" />
 		<div class="col-md-12">
 			<label> <span class="glyphicon glyphicon-remove-circle"></span>

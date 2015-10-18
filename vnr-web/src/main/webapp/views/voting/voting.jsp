@@ -41,7 +41,7 @@
 
 <div class="container">
 	<div class="col-md-12">
-		<form id="formPrincipal" method="POST" action="/vote-no-restaurante/HomeController">
+		<form id="formPrincipal" method="POST" action="/vote-no-restaurante/home">
 			
 			<input type="hidden" name="executeAction" value="" />
 			<input type="hidden" name="idRestaurantFirstVote" value="" />
