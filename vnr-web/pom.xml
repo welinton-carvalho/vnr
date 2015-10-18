@@ -34,7 +34,7 @@
 
 		<!-- AUTO DEPLOY JBOSS -->
 		<jboss.as.hostname>localhost</jboss.as.hostname>
-		<jboss.as.port>19999</jboss.as.port>
+		<jboss.as.port>9999</jboss.as.port>
 		<jboss.as.name>pst-web.war</jboss.as.name>
 		<jboss.as.username>pst</jboss.as.username>
 		<jboss.as.password>741qaz</jboss.as.password>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.InvalidDataAccessResourceUsageException;
 import org.springframework.stereotype.Service;
 
 import br.com.vnr.dto.RankingDTO;
@@ -57,7 +58,7 @@ public class RankingServiceImpl implements RankingService {
 
 			}
 
-		} catch (ServiceException e) {
+		} catch (ServiceException | InvalidDataAccessResourceUsageException e) {
 
 			throw new ServiceException(
 					"Ocorreu um erro ao computar a lista de votos.");

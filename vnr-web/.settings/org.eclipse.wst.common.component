@@ -8,6 +8,6 @@
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path" value="/vote-no-restaurante/target/classes"/>
-        <property name="context-root" value="vnr-web"/>
+        <property name="context-root" value="vote-no-restaurante"/>
     </wb-module>
 </project-modules>
