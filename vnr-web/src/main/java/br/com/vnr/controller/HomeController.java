@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.StyledEditorKit.BoldAction;
 
 import br.com.vnr.controller.constants.PagesToNavigate;
 import br.com.vnr.controller.request.mapper.VoterRequestMapper;
@@ -99,6 +100,8 @@ public class HomeController extends AbstractBaseController {
 
 			} else {
 
+				request.getSession().setAttribute("haveVoted", Boolean.TRUE);
+				
 				this.forwardToMessagePage("Você já votou nessa enquete!", request, response);
 
 			}
@@ -227,9 +230,9 @@ public class HomeController extends AbstractBaseController {
 		try {
 
 			Voter voter = new VoterRequestMapper().getVoter(request);
-						
+
 			voter.addVote((Vote) this.getSessionAttribute(request, "firstVote"));
-			
+
 			voter.addVote((Vote) this.getSessionAttribute(request, "secondVote"));
 
 			this.voterService.save(voter);

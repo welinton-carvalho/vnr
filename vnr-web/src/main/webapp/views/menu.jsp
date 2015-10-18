@@ -17,8 +17,9 @@
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a onclick="javascript:showRestaurantsToVote()">Votar</a></li>
-					<!-- TODO: Desabilitado para forcar o usuario a cadastrar seus dados para ver o ranking. -->
-					<!-- <li><a onclick="javascript:showRanking()">Ranking</a></li> -->
+					<c:if test="${haveVoted}">
+						<li><a onclick="javascript:showRanking()">Ranking</a></li>
+					</c:if>
 				</ul>
 			</div>
 		</div>

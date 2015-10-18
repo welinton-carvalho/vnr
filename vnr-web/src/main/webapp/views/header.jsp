@@ -22,18 +22,18 @@
 		    <![endif]-->
 	</head>
 	<script type="text/javascript">
+
 		function showRestaurantsToVote() {
 			var form = document.getElementById('formPrincipal');
 			form.executeAction.value = null;
 			form.submit();
 		}
 
-		//      TODO: Desabilitado para forcar o usuario a cadastrar seus dados para ver o ranking. 
-		// 		function showRanking() {
-		// 			var form = document.getElementById('formPrincipal');
-		// 			form.executeAction.value = "showRanking";
-		// 			form.submit();
-		// 		}
+		function showRanking() {
+			var form = document.getElementById('formPrincipal');
+			form.executeAction.value = "showRanking";
+			form.submit();
+		}
 		
 	</script>
 	
