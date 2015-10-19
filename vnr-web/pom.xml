@@ -31,6 +31,7 @@
 		<version.javax.servlet.api>3.0.1</version.javax.servlet.api>
 		<version.spring.web>3.0.5.RELEASE</version.spring.web>
 		<version.jboss.as>7.4.Final</version.jboss.as>
+		<version.tomcat.maven.plugin>2.2</version.tomcat.maven.plugin>
 
 		<!-- AUTO DEPLOY JBOSS -->
 		<jboss.as.hostname>localhost</jboss.as.hostname>
@@ -86,7 +87,6 @@
 				</executions>
 			</plugin>
 		</plugins>
-
 	</build>
 
 	<dependencies>

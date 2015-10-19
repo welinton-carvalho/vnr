@@ -163,10 +163,40 @@
 			</activation>
 		</profile>
 		<profile>
-			<id>aws</id>
+			<id>aws-jboss</id>
 			<properties>
 				<jboss.autodeploy.skipRun>false</jboss.autodeploy.skipRun>
 			</properties>
+		</profile>
+		<profile>
+			<id>aws-tomcat7</id>
+			<properties>
+				<jboss.autodeploy.skipRun>true</jboss.autodeploy.skipRun>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.tomcat.maven</groupId>
+						<artifactId>tomcat7-maven-plugin</artifactId>
+						<version>2.1</version>
+						<executions>
+							<execution>
+								<phase>install</phase>
+								<goals>
+									<goal>deploy</goal>
+								</goals>
+								<configuration>
+									<configuration>
+										<url>http://localhost:8080/manager/text</url>
+										<server>dev-tomcat</server>
+										<path>/vote-no-restaurante</path>
+									</configuration>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
 		</profile>
 	</profiles>
 
