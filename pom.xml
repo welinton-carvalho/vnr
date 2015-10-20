@@ -183,11 +183,11 @@
 							<execution>
 								<phase>install</phase>
 								<goals>
-									<goal>deploy</goal>
+									<goal>redeploy</goal>
 								</goals>
 								<configuration>
 									<configuration>
-										<url>http://localhost:8080/manager/html</url>
+										<url>http://localhost:8080/manager/text</url>
 										<server>dev-tomcat</server>
 										<path>/vote-no-restaurante</path>
 									</configuration>
