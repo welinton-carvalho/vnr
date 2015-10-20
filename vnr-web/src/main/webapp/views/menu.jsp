@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <div class="navbar navbar-default">
 	<nav class="navbar navbar-inverse navbar-fixed-top">

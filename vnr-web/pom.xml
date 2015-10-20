@@ -26,9 +26,6 @@
 	<properties>
 		<version.vnr-domain>0.0.1-SNAPSHOT</version.vnr-domain>
 		<version.maven.war.plugin>2.4</version.maven.war.plugin>
-		<version.javax.el>2.2</version.javax.el>
-		<version.jstl>1.2</version.jstl>
-		<version.javax.servlet.api>3.0.1</version.javax.servlet.api>
 		<version.spring.web>3.0.5.RELEASE</version.spring.web>
 		<version.jboss.as>7.4.Final</version.jboss.as>
 		<version.tomcat.maven.plugin>2.2</version.tomcat.maven.plugin>
@@ -94,23 +91,6 @@
 			<groupId>br.com.vnr</groupId>
 			<artifactId>vnr-domain</artifactId>
 			<version>${version.vnr-domain}</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.el</groupId>
-			<artifactId>el-api</artifactId>
-			<version>${version.javax.el}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>${version.jstl}</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>${version.javax.servlet.api}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>

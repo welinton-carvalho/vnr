@@ -29,31 +29,11 @@
 		<version.hibernate.validator>4.2.0.Final</version.hibernate.validator>
 		<version.antlr>2.7.7</version.antlr>
 		<version.junit>4.11</version.junit>
-		<version.jacoco>0.7.5.201505241946</version.jacoco>
 		<version.easymock>3.4</version.easymock>
 	</properties>
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${version.jacoco}</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>

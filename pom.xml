@@ -38,6 +38,9 @@
 		<version.spring.data.jpa>1.8.1.RELEASE</version.spring.data.jpa>
 		<version.maven.compiler>3.1</version.maven.compiler>
 		<version.maven.source.plugin>2.2.1</version.maven.source.plugin>
+		<version.javax.servlet.api>3.0.1</version.javax.servlet.api>
+		<version.javax.el>2.2</version.javax.el>
+		<version.jstl>1.2</version.jstl>
 
 		<version.vnr-domain>0.0.1-SNAPSHOT</version.vnr-domain>
 		<version.vnr-web>0.0.1-SNAPSHOT</version.vnr-web>
@@ -130,7 +133,23 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>${version.javax.el}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${version.jstl}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${version.javax.servlet.api}</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
